@@ -1,56 +1,53 @@
 ﻿@model Categorias
 @{
-    ViewData["Title"] = "Editar";
+    Layout = "_LayoutAdmin";
+    ViewData["Title"] = "Editar Categoría";
 }
 
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<div class="text-lg-center">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a asp-controller="Catalogos" asp-action="Index">Catalogos</a></li>
-            <li class="breadcrumb-item"><a asp-controller="Categorias" asp-action="Index">Categorias</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Editar</li>
-        </ol>
-    </nav>
-</div>
-<br />
-<div class="text-lg-center">
-    <div class=" row">
-        <div class=" col-md-4">
-            <div class="text-lg-center">
-                <form asp-action="Editar">
-                    <div asp-validation-summary=" ModelOnly" class=" text-danger"></div>
-                    <input type="hidden" asp-for="ID" />
-                    <div class="text-lg-center">
-                        <div class=" form-group">
-                            <label asp-for="nombre" class="control-label"></label>
-                            <input asp-for="nombre" class="form-control" />
-                            <span asp-validation-for="nombre" class=" text-danger"></span>
-                        </div>
+<div class="row" style="margin-top: 60px;">
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <div class="row justify-content-md-center">
+                    <div class="col-md-12">
+
+                        <section id="nuevaCategoria">
+                            <form asp-action="Editar">
+                                <div asp-validation-summary=" ModelOnly" class=" text-danger"></div>
+                                <input type="hidden" asp-for="ID" />
+                                <div class="row justify-content-md-center">
+                                    <div class="col-sm-12" style="margin: 10px;">
+                                        <div class="form-group">
+                                            <label asp-for=" nombre" class=" control-label">Categoría</label>
+                                            <span class="text-danger">
+                                                (*)
+                                            </span>
+                                            <input asp-for="nombre" class="form-control" />
+                                            <span asp-validation-for="nombre" class=" text-danger"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12" style="margin: 10px;">
+                                        <div class="form-group">
+                                            <input type="submit" value="Actualizar" class="btn btn-primary" />
+                                            <a class="btn btn-danger" asp-action="Index">Cancelar</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </section>
                     </div>
-                    <div class=" form-group">
-                        <input type="submit" value="Guardar Cambios" class="btn btn-primary" />
-                    </div>
-                </form>
+
+                </div>
             </div>
         </div>
-
-    </div>
-    <div>
-        <form asp-action="Editar">
-            <input type="hidden" asp-for="ID" />
-            <input type="submit" value="Aceptar" class="btn btn-danager" />
-            <a asp-action="Index">Regresar a Categorias</a>
-        </form>
     </div>
 </div>
-    @section Scripts {
-        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");
-        }
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
     }
 

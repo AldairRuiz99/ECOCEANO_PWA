@@ -27,6 +27,9 @@ namespace ECOCEANO.Data
             modelBuilder.Entity<Usuarios>()
                 .Property(b => b.ID).ValueGeneratedOnAdd();
 
+            modelBuilder.Entity<Categorias>()
+                .Property(b => b.ID).ValueGeneratedOnAdd();
+
             modelBuilder.Entity<Ventas>()
                 .Property(b => b.MontoTotal).HasColumnType("decimal(18,2)");
 
@@ -38,10 +41,11 @@ namespace ECOCEANO.Data
 
         }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder options)
-        //    {
-        //        //options.UseMySQL("Server=localhost;Port=3306;Database=ecoceanobd;User ID=root;Password=41dair;CharSet=utf8;");
-        //    }
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
+        {
+            options.UseSqlServer(@"workstation id=ecoceanobd.mssql.somee.com;packet size=4096;user id=ecoceano_SQLLogin_1;pwd=ngi6zqziey;data source=ecoceanobd.mssql.somee.com;persist security info=False;initial catalog=ecoceanobd;");
+            //options.UseSqlServer(@"Server=PC-ARN\SQL_ARN;Initial Catalog=ecoceanobd;MultipleActiveResultSets=true;User ID=sa;Password=41dair;");
+        }
 
     }
 }

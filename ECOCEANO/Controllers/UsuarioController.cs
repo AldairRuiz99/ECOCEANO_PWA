@@ -35,7 +35,7 @@ namespace ECOCEANO.Controllers
                 //Datos de prueba
                 usu.fecharegistro = DateTime.Now;
                 usu.estatus = true;
-                usu.rol = "cliente";
+                usu.rol = "Cliente";
                 //Agregamos el usuario 
                 con.Add(usu);
                 //Guardamos cambios 

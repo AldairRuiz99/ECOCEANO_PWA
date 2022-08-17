@@ -16,7 +16,7 @@ namespace ECOCEANO.Controllers
     {
         private readonly EcoceanoContext con;
 
-        public LoginController( EcoceanoContext _con)
+        public LoginController(EcoceanoContext _con)
         {
             this.con = _con;
         }
@@ -55,10 +55,10 @@ namespace ECOCEANO.Controllers
                 else
                 {
                     var claims = new List<Claim>
-                {
-                    new Claim(ClaimTypes.Name, usu.correo),
-                    new Claim(ClaimTypes.Role, "Administrador"),
-                };
+                    {
+                        new Claim(ClaimTypes.Name, usu.correo),
+                        new Claim(ClaimTypes.Role, "Administrador"),
+                    };
                     var claimsIdentity = new ClaimsIdentity(
                         claims, CookieAuthenticationDefaults.AuthenticationScheme);
                     var authProperties = new AuthenticationProperties
@@ -70,7 +70,13 @@ namespace ECOCEANO.Controllers
                         CookieAuthenticationDefaults.AuthenticationScheme,
                         new ClaimsPrincipal(claimsIdentity), authProperties);
 
-                    return RedirectToAction("Index", "Catalogos");
+                    string action = "";
+                    if (usuario.rol == "Administrador")
+                        action = "Catalogos";
+                    else if(usuario.rol == "Cliente")
+                        action = "Home";
+
+                    return RedirectToAction("Index", action);
                 }
             }
             else

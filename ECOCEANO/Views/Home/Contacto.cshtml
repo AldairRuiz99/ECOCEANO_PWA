@@ -1,6 +1,7 @@
 ﻿@page
 @model ECOCEANO.Views.Home.ContactoModel
 @{
+    ViewBag.Title = "Contáctanos";
 }
 
 <br />
@@ -16,64 +17,106 @@
             <h3>Contáctanos</h3>
         </div>
         <div>
-            <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.183589217743!2d-96.12508814952692!3d19.18718208696049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c346cddf763ba3%3A0x54363baf63240535!2sAcuario%20de%20Veracruz!5e0!3m2!1ses!2smx!4v1648419686512!5m2!1ses!2smx" frameborder="0" allowfullscreen></iframe>
+            <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15108.274402478688!2d-96.7042522!3d18.7950959!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x786682af2917773!2sUniversidad%20Tecnol%C3%B3gica%20del%20Centro%20de%20Veracruz%20(UTCV)!5e0!3m2!1ses!2smx!4v1660444419623!5m2!1ses!2smx" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            @*<iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.183589217743!2d-96.12508814952692!3d19.18718208696049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c346cddf763ba3%3A0x54363baf63240535!2sAcuario%20de%20Veracruz!5e0!3m2!1ses!2smx!4v1648419686512!5m2!1ses!2smx" frameborder="0" allowfullscreen></iframe>*@
         </div>
-        </div>
-    </section>
-        <section id="contact" class="section-bg">
+    </div>
+</section>
 
-            <div class="container" data-aos="fade-up">
-
-                <div class="row contact-info">
-
-                    <div class="col-md-4">
-                        <div class="contact-address">
-                            <i class="bi bi-geo-alt"></i>
-                            <h3>Dirección</h3>
-                            <address>Calle 6 entre avs. 5 y 6 Cuitláhuac, Veracruz. </address>
+<div class="card">
+    <div class="card-body">
+        <div class="row justify-content-md-center">
+            <div class="col-md-4 text-center">
+                <div class="row text-center justify-content-center">
+                    <div class="col-md text-center">
+                        <div class="card" style="height: 170px!important; margin: 10px;">
+                            <div class="card-body">
+                                <box-icon name="current-location"></box-icon>
+                                <h3>Dirección</h3>
+                                <p>Calle 6 entre avs. 5 y 6 Cuitláhuac, Veracruz. </p>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="col-md-4">
-                        <div class="contact-phone">
-                            <i class="bi bi-phone"></i>
-                            <h3>Teléfono</h3>
-                            <p><a href="tel:+2712172042"> 2712172042</a></p>
+                    <div class="col-md text-center">
+                        <div class="card" style="height: 170px!important; margin: 10px;">
+                            <div class="card-body">
+                                <box-icon name="phone"></box-icon>
+                                <h3>Teléfono</h3>
+                                <p><a href="tel:+2712172042"> 2712172042</a></p>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="col-md-4">
-                        <div class="contact-email">
-                            <i class="bi bi-envelope"></i>
-                            <h3>Email</h3>
-                            <p><a href="mailto:tecnoierf@gmail.com">tecnoierf@gmail.com</a></p>
+                    <div class="col-md text-center">
+                        <div class="card" style="height: 170px!important; margin: 10px;">
+                            <div class="card-body">
+                                <box-icon name='envelope'></box-icon>
+                                <h3>Email</h3>
+                                <p><a href="mailto:tecnoierf@gmail.com">tecnoierf@gmail.com</a></p>
+                            </div>
                         </div>
                     </div>
-
                 </div>
-
-                <div class="form">
+            </div>
+            <div class="col-md-6 text-center">
+                <div class="form" style="margin-top:10%;margin-left:15%;">
                     <form action="forms/contact.php" method="post" role="form" class="php-email-form">
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" required>
                             </div>
                             <div class="form-group col-md-6 mt-3 mt-md-0">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Correo" required>
                             </div>
                         </div>
                         <div class="form-group mt-3">
-                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" required>
                         </div>
                         <div class="form-group mt-3">
-                            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                            <textarea class="form-control" name="message" rows="5" placeholder="Descripción" required></textarea>
                         </div>
 
                         <div class="text-center"><button type="submit" class="btn btn-info" asp-controller="Home" asp-action="Index">Enviar</button></div>
                     </form>
                 </div>
-
             </div>
-        </section><!-- End Contact Section -->
+        </div>
+    </div>
+</div>
 
-        
+@*<section id="contact" class="section-bg">
+
+    <div class="container" data-aos="fade-up">
+
+        <div class="row contact-info">
+
+            <div class="col-md-4">
+                <div class="contact-address">
+                    <i class="bi bi-geo-alt"></i>
+                    <h3>Dirección</h3>
+                    <address>Calle 6 entre avs. 5 y 6 Cuitláhuac, Veracruz. </address>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="contact-phone">
+                    <i class="bi bi-phone"></i>
+                    <h3>Teléfono</h3>
+                    <p><a href="tel:+2712172042"> 2712172042</a></p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="contact-email">
+                    <i class="bi bi-envelope"></i>
+                    <h3>Email</h3>
+                    <p><a href="mailto:tecnoierf@gmail.com">tecnoierf@gmail.com</a></p>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+</section>*@
+<!-- End Contact Section -->

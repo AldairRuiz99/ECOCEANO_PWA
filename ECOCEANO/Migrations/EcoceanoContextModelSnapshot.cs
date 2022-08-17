@@ -187,7 +187,7 @@ namespace ECOCEANO.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("nombre")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varchar(200)");
 
                     b.Property<string>("pApellido")
                         .HasColumnType("nvarchar(max)");

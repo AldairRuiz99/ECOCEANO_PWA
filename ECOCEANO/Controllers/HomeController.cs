@@ -47,6 +47,10 @@ namespace ECOCEANO.Controllers
         {
             return View();
         }
+        public IActionResult Portafolio()
+        {
+            return View();
+        }
         public IActionResult CreaturaDetalles()
         {
             return View();

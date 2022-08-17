@@ -6,8 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-	  <ServiceWorker Include="wwwroot\service-worker.js"
-    PublishedContent="wwwroot\service-worker.published.js" />
+	  <ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
 	  <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
 	  <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.8" />
 	  <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.6" />

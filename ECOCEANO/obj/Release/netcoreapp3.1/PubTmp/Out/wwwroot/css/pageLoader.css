@@ -1,0 +1,10 @@
+﻿#preloader {
+    background: #000 url(../Img/loader/loader4.gif) no-repeat center center;
+    /*background: #0D0121 url(../Img/loader/loader.gif) no-repeat center center;*/
+    /*background: #101010 url(../Img/loader/loader2.gif) no-repeat center center;*/
+    background-size: 30%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}

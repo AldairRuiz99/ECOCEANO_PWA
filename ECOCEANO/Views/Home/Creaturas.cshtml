@@ -1,9 +1,12 @@
 ﻿@page
 @model ECOCEANO.Views.Home.CreaturasModel
 @{
+    ViewBag.Title = "Criaturas";
 }
 
-
+@section Styles {
+    <link href="@Url.Content("~/css/cardHover.css")" rel="stylesheet" type="text/css" />
+}
 
 
 
@@ -18,19 +21,93 @@
     <h3>Manual de Criaturas Marinas</h3>
 
 </div>
+
+<div class="container container-criatura">
+    <div class="row">
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0 card-criatura">
+            <div class="card">
+                <div class="card-body card-criatura-body">
+                    <img src="~/Img/vaquita1.png" alt="Speaker 1" class="img-fluid">
+                    <h3><a asp-controller="Home" asp-action="CreaturaDetalles">Vaquita Marina</a></h3>
+                    <p>
+                        Especie Marina
+                        <br />(Phocoena Sinus)
+                    </p>
+                    <p style="text-align: justify;">
+
+                        Una de las especies marinas más amenazadas del mundo es una diminuta marsopa conocida como la vaquita marina, sólo vive en una región pequeña, al norte de una línea imaginaria que conecta Puertecitos en Baja California y Puerto Peñasco en Sonora. La vaquita es la más chica de los cetáceos, una familia que incluye a las ballenas, los delfines y las marsopas.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0 card-criatura">
+            <div class="card">
+                <div class="card-body card-criatura-body">
+                    <img src="~/Img/TortugaLora.png" alt="Speaker 2" class="img-fluid">
+                    <h3><a asp-controller="Home" asp-action="CreaturaDetalle2">Tortuga Carey</a></h3>
+                    <p>
+                        Especie Marina
+                        <br />(Eretmochelys imbricata)
+                    </p>
+                    <p style="text-align: justify;">
+
+                        Millones de tortugas carey han muerto en los últimos cien años por el comercio de caparazones. A pesar de que el mercado internacional legal de caparazones de tortugas carey finalizó en 1993, el comercio aún continúa.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0 card-criatura">
+            <div class="card">
+                <div class="card-body card-criatura-body">
+                    <img src="~/Img/Totoaba1.png" alt="Speaker 3" class="img-fluid">
+                    <h3><a asp-controller="Home" asp-action="CreaturaDetalle3">Totoaba</a></h3>
+                    <p>
+                        Especie Marina
+                        <br />(Totoaba macdonaldi)
+                    </p>
+                    <p style="text-align: justify;">
+                        La Totoaba es una especie endémica en peligro de extinción por lo que su veda es permanente desde 1975. Se incluyó en el Apéndice I de la Convención sobre Comercio Internacional de Especies Amenazadas de Fauna y Flora Silvestres (CITES) desde 1976. Son capturados con redes de enmalle en las que queda atrapada incidentalmente la vaquita marina.
+
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0 card-criatura">
+            <div class="card">
+                <div class="card-body card-criatura-body">
+                    <img src="~/Img/ballena1.png" alt="Speaker 4" class="img-fluid">
+                    <h3><a asp-controller="Home" asp-action="CreaturaDetalles4">Ballena Azul</a></h3>
+                    <p>
+                        Especie Marina
+                        <br />(Balaenoptera musculus)
+                    </p>
+                    <p style="text-align: justify;">
+                        Los investigadores identificaron que las ballenas tienen serios problemas para alimentarse y desplazarse por la zona debido a la gran presencia de barcos de pesca. La especie se encuentra en peligro de extinción. La vida y supervivencia de las ballenas azules se encuentra bajo amenaza debido al alto tráfico pesquero en la zona.
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- ======= Services Section ======= -->
-<section id="services" class="services">
+@*<section id="services" class="services">
     <div class="container">
 
         <div class="row">
             <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                 <div class="icon-box">
-                    <img src="~/Img/vaquita1.png" alt="Speaker 1" class="img-fluid">
+                    <im  g src="~/Img/vaquita1.png" alt="Speaker 1" class="img-fluid">
                     <div class="icon"><i class="fa-duotone fa-comet"></i></div>
                     <h3><a asp-controller="Home" asp-action="CreaturaDetalles">Vaquita Marina</a></h3>
                     <p>
                         Especie Marina
                         <br />(Phocoena Sinus)
+                    </p>
+                    <p style="text-align: justify;">
+
+                        Una de las especies marinas más amenazadas del mundo es una diminuta marsopa conocida como la vaquita marina, sólo vive en una región pequeña, al norte de una línea imaginaria que conecta Puertecitos en Baja California y Puerto Peñasco en Sonora. La vaquita es la más chica de los cetáceos, una familia que incluye a las ballenas, los delfines y las marsopas.
                     </p>
                 </div>
             </div>
@@ -44,6 +121,10 @@
                         Especie Marina
                         <br />(Eretmochelys imbricata)
                     </p>
+                    <p style="text-align: justify;">
+
+                        Millones de tortugas carey han muerto en los últimos cien años por el comercio de caparazones. A pesar de que el mercado internacional legal de caparazones de tortugas carey finalizó en 1993, el comercio aún continúa.
+                    </p>
                 </div>
             </div>
 
@@ -55,6 +136,10 @@
                     <p>
                         Especie Marina
                         <br />(Totoaba macdonaldi)
+                    </p>
+                    <p style="text-align: justify;">
+                        La Totoaba es una especie endémica en peligro de extinción por lo que su veda es permanente desde 1975. Se incluyó en el Apéndice I de la Convención sobre Comercio Internacional de Especies Amenazadas de Fauna y Flora Silvestres (CITES) desde 1976. Son capturados con redes de enmalle en las que queda atrapada incidentalmente la vaquita marina.
+
                     </p>
                 </div>
             </div>
@@ -68,19 +153,24 @@
                         Especie Marina
                         <br />(Balaenoptera musculus)
                     </p>
+                    <p style="text-align: justify;">
+                        Los investigadores identificaron que las ballenas tienen serios problemas para alimentarse y desplazarse por la zona debido a la gran presencia de barcos de pesca. La especie se encuentra en peligro de extinción. La vida y supervivencia de las ballenas azules se encuentra bajo amenaza debido al alto tráfico pesquero en la zona.
+
+                    </p>
                 </div>
             </div>
 
         </div>
 
     </div>
-</section><!-- End Services Section -->
+</section>*@
+<!-- End Services Section -->
 <!-- Vendor JS Files -->
-<script src="assets/vendor/aos/aos.js"></script>
+@*<script src="assets/vendor/aos/aos.js"></script>
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
 <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>*@
 
 <!-- Template Main JS File -->
-<script src="assets/js/main.js"></script>
+@*<script src="assets/js/main.js"></script>*@

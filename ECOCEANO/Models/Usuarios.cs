@@ -29,6 +29,7 @@ namespace ECOCEANO.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int ID { get; set; }
+        [Column(TypeName = "varchar(200)")]
         public string nombre { get; set; }
         public string pApellido { get; set; }
         public string sApellido { get; set; }

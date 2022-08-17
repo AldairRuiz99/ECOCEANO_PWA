@@ -1,0 +1,23 @@
+﻿
+
+    .container-criatura .card-criatura {
+
+        transition: all 1s;
+    }
+
+    .container-criatura .card-criatura-body {
+        border-radius: 8px;
+        box-shadow: 0 7px 7px 7px rgba(0,0,0,0.2);
+        overflow: hidden;
+        text-align: center;
+        transition: all 1s;
+    }
+
+
+    .container-criatura .card-criatura:hover {
+        transform: translateY(-15px);
+    }
+
+    .container-criatura .card-criatura-body:hover {
+        background: #b5fff5;
+    }

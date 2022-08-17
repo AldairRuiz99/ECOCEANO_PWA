@@ -140,3 +140,4 @@ C:\Users\aldai\OneDrive\Documentos\eco\ECOCEANO\obj\Release\netcoreapp3.1\ECOCEA
 C:\Users\aldai\OneDrive\Documentos\eco\ECOCEANO\obj\Release\netcoreapp3.1\ECOCEANO.dll
 C:\Users\aldai\OneDrive\Documentos\eco\ECOCEANO\obj\Release\netcoreapp3.1\ECOCEANO.pdb
 C:\Users\aldai\OneDrive\Documentos\eco\ECOCEANO\obj\Release\netcoreapp3.1\ECOCEANO.genruntimeconfig.cache
+C:\Users\aldai\OneDrive\Documentos\eco\ECOCEANO\obj\Release\netcoreapp3.1\Razor\Views\Home\Portafolio.cshtml.g.cs

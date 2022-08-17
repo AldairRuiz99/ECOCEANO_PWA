@@ -1,4 +1,99 @@
 ﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link href="~/assets/plugins/fontawesome/css/all.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="~/Content/estilos.css">
+    <link rel="stylesheet" href="~/Content/leftSidebar.css">
+    <link rel="stylesheet" href="~/assets/plugins/bootstrap/css/bootstrap.css">
+
+</head>
+<body id="body-pd">
+
+    <header class="header" id="header">
+        <div class="header__toggle">
+            <i class='bx bx-menu' id="header-toggle"></i>
+        </div>
+        <span>@ViewBag.Title</span>
+        <div class="header__img">
+            <img src="~/Content/icons/256_3.png" alt="">
+        </div>
+    </header>
+
+    <div class="l-navbar" id="nav-bar">
+        <nav class="navk">
+            <div>
+                <a class="nav__logo">
+                    <img style="width: 150px;" src="~/Img/Logo (1).png" alt="" class="logo">
+                </a>
+
+                <div class="nav__list">
+                    <a href="@Url.Action("Index","Catalogos")" class="nav__link">
+                        <i class='bx bx-grid-alt nav__icon'></i>
+                        <span class="nav__name">Inicio</span>
+                    </a>
+
+                    <a href="@Url.Action("Index","Categorias")" class="nav__link">
+                        <i class='bx bx-spreadsheet nav__icon'></i>
+                        <span class="nav__name">Categorías</span>
+                    </a>
+
+@*                    <a href="@Url.Action("Index","Pedidos")" class="nav__link">
+                        <i class='bx bx-user nav__icon'></i>
+                        <span class="nav__name">Usuarios</span>
+                    </a>*@
+
+                    <a href="@Url.Action("Index","Productos")" class="nav__link">
+                        <i class='bx bx-purchase-tag nav__icon'></i>
+                        <span class="nav__name">Productos</span>
+                    </a>
+
+                    <a href="@Url.Action("Index","Pedidos")" class="nav__link">
+                        <i class='bx bx-message-square-detail nav__icon'></i>
+                        <span class="nav__name">Pedidos</span>
+                    </a>
+
+                    <a href="@Url.Action("Index","Ventas")" class="nav__link">
+                        <i class='bx bx-money nav__icon'></i>
+                        <span class="nav__name">Ventas</span>
+                    </a>
+
+                </div>
+            </div>
+
+            <a href="@Url.Action("Index","Home")" class="nav__link">
+                <i class='bx bx-log-out nav__icon'></i>
+                <span class="nav__name">Ver Página</span>
+            </a>
+        </nav>
+    </div>
+
+    <main>
+        <div class="main__container">
+            @RenderBody()
+        </div>
+    </main>
+
+    <script type="text/javascript" src="~/assets/plugins/jquery/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/jquery_validate/jquery.validate.js"></script>
+    <script type="text/javascript" src="~/assets/plugins/bootstrap/js/bootstrap.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript" src="~/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js" integrity="sha512-+/4Q+xH9jXbMNJzNt2eMrYv/Zs2rzr4Bu2thfvzlshZBvH1g+VGP55W8b6xfku0c0KknE7qlbBPhDPrHFbgK4g==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js" integrity="sha512-ZKNVEa7gi0Dz4Rq9jXcySgcPiK+5f01CqW+ZoKLLKr9VMXuCsw3RjWiv8ZpIOa0hxO79np7Ec8DDWALM0bDOaQ==" crossorigin="anonymous"></script>
+
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+
+@*<!DOCTYPE html>
 
 <html>
 <head>
@@ -35,7 +130,7 @@
                     <ul class="nav flex-column">
                         <!----OPCION 1-->
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-controller="Home" asp-action="Index">
+                            <a class="nav-link text-white" asp-controller="Catalogos" asp-action="Index">
                                 <!----Icono fontawesone-->
                                 <span style="font-size: 18px; color: lightgray" ;>
                                     <!----- <i class=" fas fa-landmark"></i>---->
@@ -56,18 +151,18 @@
                             </a>
                         </li>
                         <!----OPCION 3-->
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-controller="Home" asp-action="Login">
-                                <!----Icono fontawesone-->
-                                <span style="font-size: 18px; color: lightgray" ;>
-                                    <!---- <i class=" fas fa-users"></i>------->
-                                    <!---Fin de icono-->
-                                </span>
-                                Usuarios
-                            </a>
-                        </li>
+                        @*                        <li class="nav-item">
+                        <a class="nav-link text-white" asp-controller="Usuario" asp-action="Index">
+                        <!----Icono fontawesone-->
+                        <span style="font-size: 18px; color: lightgray" ;>
+                        <!---- <i class=" fas fa-users"></i>------->
+                        <!---Fin de icono-->
+                        </span>
+                        Usuarios
+                        </a>
+                        </li>*
                         <!----OPCION 5-->
-                        <li class="nav-item">
+@*                        <li class="nav-item">
                             <a class="nav-link text-white" asp-controller="Productos" asp-action="Index">
                                 <!----Icono fontawesone-->
                                 <span style="font-size: 18px; color: lightgray" ;>
@@ -76,9 +171,9 @@
                                 </span>
                                 Productos
                             </a>
-                        </li>
+                        </li>*@
                         <!----OPCION 5-->
-                        <li class="nav-item">
+                        @*<li class="nav-item">
                             <a class="nav-link text-white" asp-controller="Pedidos" asp-action="Index">
                                 <!----Icono fontawesone-->
                                 <span style="font-size: 18px; color: lightgray" ;>
@@ -87,9 +182,9 @@
                                 </span>
                                 Pedidos
                             </a>
-                        </li>
+                        </li>*@
                         <!----OPCION 5-->
-                        <li class="nav-item">
+                        @*<li class="nav-item">
                             <a class="nav-link text-white" asp-controller="Ventas" asp-action="Index">
                                 <!----Icono fontawesone-->
                                 <span style="font-size: 18px; color: lightgray" ;>
@@ -99,34 +194,52 @@
                                 Ventas
                             </a>
                         </li>
-                      
-                   
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-controller="Home" asp-action="Index">
+                                <!----Icono fontawesone-->
+                                <span style="font-size: 18px; color: lightgray" ;>
+                                    <!----- <i class=" fas fa-landmark"></i>---->
+                                    <!---Fin de icono-->
+                                </span>
+                                Ver página
+                            </a>
+                        </li>*@
+@*                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-controller="Home" asp-action="Index">
+                                <!----Icono fontawesone-->
+                                <span style="font-size: 18px; color: lightgray" ;>
+                                    <!----- <i class=" fas fa-landmark"></i>---->
+                                    <!---Fin de icono-->
+                                </span>
+                                Cerrar sesión
+                            </a>
+                        </li>*@
+
                     </ul>
                 </div>
             </nav>
             <!----Termina barra lateral-->
-            <div class="container col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            @*<div class="container col-md-9 ml-sm-auto col-lg-10 px-md-4">
                 <main role="main" class="pb-3">
                     @RenderBody()
                 </main>
-            </div>
+            </div>*@
             <!----Pie-->
-            <footer class="border-top footer text-muted">
+@*            <footer class="border-top footer text-muted">
                 <div class="container">
                     &copy; TECNO IERF 2022 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                 </div>
             </footer>
         </div>
-    </div>
+    </div>*@
     <!----Termina Panel Admin-->
 
-
+@*
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>*@
     <!---Se agrego el script .js Font Awesome-->
-    <script src="~/js/all.js"></script>
+    <sc@*ript src="~/js/all.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
-</html>
-
+</html>*@

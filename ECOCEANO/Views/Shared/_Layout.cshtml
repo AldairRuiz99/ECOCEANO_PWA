@@ -11,7 +11,10 @@
     <link rel="stylesheet" href="~/css/BarraNav.css" />
     <link rel="stylesheet" href="~/css/Quienessomos.css" />
     <link rel="stylesheet" href="~/css/Estilo.css" />
+    <link rel="stylesheet" href="~/css/pageLoader.css" />
 
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
 
     <script src="https://kit.fontawesome.com/439e33a9f6.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -30,6 +33,9 @@
     <!-- PWA-->
 </head>
 <body>
+
+    <div id="preloader"></div>
+
     <!-- ======= Header ======= -->
     <header id="header">
         <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="navbar">
@@ -42,9 +48,10 @@
                         <li class="nav-item"><a asp-area="" asp-controller="Home" asp-action="Index">Inicio </a></li>
                         <li class="nav-item"><a asp-area="" asp-controller="Cart" asp-action="Index">Tienda </a></li>
                         <li class="nav-item"><a asp-area="" asp-controller="Home" asp-action="Creaturas">Criaturas Marinas</a></li>
-                        <li class="nav-item"><a asp-area="" asp-controller="Home" asp-action="QuienesSomos">¿Quienes Somos? </a></li>
+                        <li class="nav-item"><a asp-area="" asp-controller="Home" asp-action="QuienesSomos">¿Quiénes Somos? </a></li>
+                        <li class="nav-item"><a asp-area="" asp-controller="Home" asp-action="Portafolio">Portafolio</a></li>
                         <li class="nav-item"><a asp-area="" asp-controller="Home" asp-action="Descargas">Descargas</a></li>
-                        <li class="nav-item"><a asp-area="" asp-controller="Home" asp-action="Contacto">Contacto</a></li>
+                        <li class="nav-item"><a asp-area="" asp-controller="Home" asp-action="Contacto">Contáctanos</a></li>
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item">
@@ -99,7 +106,7 @@
 
                 else
                 {
-                    <small>Aun no hay productos en el carrito.</small>
+                    <small>Aún no hay productos en el carrito.</small>
                 }
 
                 <div class="row">
@@ -113,7 +120,7 @@
             </div>
         </div>
     </header>
-    
+
     <!-- End Header -->
     <i class="bi bi-list mobile-nav-toggle"></i>
 
@@ -147,9 +154,9 @@
                         <!-- webintern_footer_title -->
                         <h4 class="webintern_footer_title h5"><small>Conócenos</small></h4>
                         <ul class="webintern-footer-list">
-                            <li><a href="#">¿Quienes somos?</a></li>
+                            <li><a href="#">¿Quiénes somos?</a></li>
                             <li><a href="#">Descargas</a></li>
-                            <li><a href="#">Contactos </a></li>
+                            <li><a href="#">Contáctanos</a></li>
                         </ul>
                         <div class="empty-space xs-25 sm-25"></div>
                     </div>
@@ -177,7 +184,7 @@
                         <!-- TT-SUBSCRIBE -->
                         <form method="post">
                             <div class="tt-subscribe">
-                                <input type="text" required="" placeholder="Enter your email">
+                                <input type="text" required="" placeholder="Ingresa tu correo">
                                 <div class="tt-subscribe-submit">
                                     <i class="fa fa-envelope" aria-hidden="true"></i>
                                     <input type="submit" value="">
@@ -211,9 +218,24 @@
         </div>
     </footer>
 
+    
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/Assets/bootstrap/js/bootstrap.js"></script>
     @RenderSection("Scripts", required: false)
-    <script>'serviceWorker'in navigator&&navigator.serviceWorker.register('/serviceworker')</script>
+    @RenderSection("Styles", required: false)
+    <script>'serviceWorker' in navigator && navigator.serviceWorker.register('/serviceworker')</script>
+
+
+    <script>
+
+     var loader = document.getElementById("preloader");
+     window.addEventListener("load", function(){
+         loader.style.display = "none";
+     })
+
+    </script>
+
+
 </body>
 </html>
